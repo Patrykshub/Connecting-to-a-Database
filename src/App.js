@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import MoviesList from './components/MoviesList';
 import AddMovie from './components/AddMovie';
 import './App.css';
+import './components/Loader.css';
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -54,7 +55,7 @@ function App() {
   }
 
   if (isLoading) {
-    content = <p>Loading...</p>;
+    content = <div className='lds_ring'><div></div><div></div><div></div><div></div></div>;
   }
 
   return (
